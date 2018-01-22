@@ -17,7 +17,3 @@
 // $(document).on('turbolinks:load', function() {
   // $('.carousel').carousel({ indicators: true });
 // });
-
-$(document).ready(function(){
-  $('.carousel').carousel({ indicators: true });
-});
