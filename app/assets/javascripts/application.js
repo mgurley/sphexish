@@ -18,5 +18,5 @@
 
 
 $(document).on('turbolinks:load', function() {
-  $('.carousel').carousel();
+  $('.carousel').carousel({ indicators: true });
 });
