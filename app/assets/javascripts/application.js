@@ -16,7 +16,10 @@
 //= require materialize
 //= require_tree .
 
-
 $(document).ready(function(){
+
+});
+
+$(document).on('turbolinks:load', function() {
   $('.carousel.carousel-slider').carousel();
 });
