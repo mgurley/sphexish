@@ -1,0 +1,14 @@
+development:
+  host: localhost
+  port: 5433
+  adapter: postgresql
+  database: sphexish_development
+  username: sphexish_development
+  password: sphexish_development
+
+test: &TEST
+  host: localhost
+  adapter: postgresql
+  database: sphexish_test
+  username: sphexish_test
+  password: sphexish_test
