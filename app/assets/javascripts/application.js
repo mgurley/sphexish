@@ -15,7 +15,10 @@
 //= require materialize
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
+// });
+
+document.addEventListener("turbolinks:load", function() {
   $(".button-collapse").sideNav();
   $('.carousel').carousel();
-});
+})
