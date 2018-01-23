@@ -15,10 +15,17 @@
 //= require materialize
 //= require_tree .
 
-// $(document).on('turbolinks:load', function() {
-// });
+// document.addEventListener("turbolinks:load", function() {
+//   $(".button-collapse").sideNav();
+//   $('.carousel').carousel();
+// })
 
-document.addEventListener("turbolinks:load", function() {
+
+jQuery(document).on('turbolinks:load', function() {
   $(".button-collapse").sideNav();
   $('.carousel').carousel();
-})
+});
+
+document.addEventListener("turbolinks:before-cache", function() {
+  jQuery('.button-collapse').sideNav('destroy');
+});
