@@ -28,4 +28,5 @@ jQuery(document).on('turbolinks:load', function() {
 
 document.addEventListener("turbolinks:before-cache", function() {
   jQuery('.button-collapse').sideNav('destroy');
+  jQuery('.carousel').carousel('destroy');
 });
