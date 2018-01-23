@@ -1,17 +1,40 @@
 !!!
 %html
   %head
-    %meta{:charset => "UTF-8"}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Booch
-    = javascript_include_tag 'application'
-    / Compiled and minified CSS
-    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css", :rel => "stylesheet prefetch"}/
-    / Compiled and minified JavaScript
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
-    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"}
-    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"}
-    :javascript
-      $(document).ready(function(){
-        $('.carousel').carousel({ indicators: true });
-      });
+    .navbar-fixed
+      %nav.blue{:role => "navigation"}
+        .nav-wrapper.container
+          %a#logo-container.brand-logo{:href => "#"}
+            .logo.center-block
+          %ul.right.hide-on-med-and-down
+            %li
+              %a{:href => "#", :id => ""} Link
+            %li
+              %a{:href => "#", :id => ""} Link
+            %li
+              %a{:href => "#", :target => "_blank"} Link
+            %li
+              %a{:href => "#", :target => "_blank"} Link
+          %a.button-collapse{"data-activates" => "nav-mobile", :href => "#"}
+            %i.material-icons menu
+    %ul#nav-mobile.side-nav
+      %li
+        %a{:href => "#", :id => ""} Link
+      %li
+        %a{:href => "#", :id => ""} Link
+      %li
+        %a{:href => "#", :target => "_blank"} Link
+      %li
+        %a{:href => "#", :target => "_blank"} Link
+
+    .container
+      .row
+        .col.s12
+          / Page Content goes here
+          = yield
